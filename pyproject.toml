@@ -1,0 +1,72 @@
+[project]
+name = "pypkgtest"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Andrew Gene Brown", email = "brown.andrewg@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+classifiers = ["Development Status :: 1 - Planning"]
+
+[project.scripts]
+pypkgtest = "pypkgtest:main"
+
+[build-system]
+requires = ["uv_build>=0.12.9,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "codespell>=2.4.3",
+    "deptry>=0.25.1",
+    "pyproject-fmt>=2.29.3",
+    "ruff>=0.16.5",
+    "usethis>=0.22.0",
+]
+doc = [
+    "mkdocs>=1.6.1",
+]
+test = [
+    "coverage[toml]>=7.16.0",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+]
+
+[tool.uv]
+link-mode = "symlink"
+default-groups = ["doc", "dev", "test"]
+
+[tool.deptry]
+ignore_notebooks = false
+
+[tool.ruff]
+line-length = 88
+lint.select = ["A", "C4", "E4", "E7", "E9", "F", "FLY", "FURB", "I", "PLE", "PLR", "RUF", "SIM", "UP", "PT"]
+lint.per-file-ignores."!tests/**/*.py" = ["PT"]
+lint.ignore = ["PLR2004", "SIM108"]
+format.docstring-code-format = true
+
+[tool.pyproject-fmt]
+keep_full_version = true
+
+[tool.codespell]
+ignore-regex = ["[A-Za-z0-9+/]{100,}"]
+ignore-words-list = ["..."]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["--import-mode=importlib", "-ra", "--strict-markers", "--strict-config"]
+filterwarnings = ["error"]
+xfail_strict = true
+log_cli_level = "INFO"
+minversion = "7"
+
+[tool.coverage]
+report.exclude_also = ["if TYPE_CHECKING:", "raise AssertionError", "raise NotImplementedError", "msg = [\"']", "assert_never(.*)", "class .*\\bProtocol\\):", "@(abc\\.)?abstractmethod"]
+report.omit = ["*/pytest-of-*/*"]
+
+[tool.coverage.run]
+source = ["src"]
+relative_files = true
