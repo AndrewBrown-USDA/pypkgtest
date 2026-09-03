@@ -7,7 +7,7 @@ authors = [
     { name = "Andrew Gene Brown", email = "brown.andrewg@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = ["numpy"]
 classifiers = ["Development Status :: 1 - Planning"]
 
 [project.scripts]
