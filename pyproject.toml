@@ -7,7 +7,7 @@ name = "pypkgtest"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-authors = [ { name = "Andrew Gene Brown", email = "brown.andrewg@gmail.com" } ]
+authors = [ { name = "Andrew Gene Brown", email = "andrew.g.brown@usda.gov" } ]
 requires-python = ">=3.13"
 classifiers = [
   "Development Status :: 1 - Planning",
