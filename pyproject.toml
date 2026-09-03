@@ -52,8 +52,7 @@ format.docstring-code-format = true
 keep_full_version = true
 
 [tool.codespell]
-ignore-regex = ["[A-Za-z0-9+/]{100,}"]
-ignore-words-list = ["..."]
+skip = "./site"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -66,7 +65,3 @@ minversion = "7"
 [tool.coverage]
 report.exclude_also = ["if TYPE_CHECKING:", "raise AssertionError", "raise NotImplementedError", "msg = [\"']", "assert_never(.*)", "class .*\\bProtocol\\):", "@(abc\\.)?abstractmethod"]
 report.omit = ["*/pytest-of-*/*"]
-
-[tool.coverage.run]
-source = ["src"]
-relative_files = true
