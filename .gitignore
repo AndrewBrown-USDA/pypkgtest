@@ -1,3 +1,6 @@
+# Generated site files
+site/
+
 # Python-generated files
 __pycache__/
 *.py[oc]
