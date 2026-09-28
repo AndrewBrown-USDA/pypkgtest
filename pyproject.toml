@@ -24,7 +24,7 @@ dev = [
   "codespell>=2.4.3",
   "deptry>=0.25.1",
   "pyproject-fmt>=2.29.4",
-  "ruff>=0.16.7",
+  "ruff>=0.16.9",
   "usethis>=0.22.0",
 ]
 test = [
