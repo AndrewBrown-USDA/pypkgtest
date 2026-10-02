@@ -1,13 +1,31 @@
 import numpy as np
 import pytest
 
-from pypkgtest import cosine, euclidean, gower
+from pypkgtest import chebyshev, cosine, euclidean, gower, manhattan, minkowski
 
 
 def test_euclidean():
     a = np.array([0, 0])
     b = np.array([3, 4])
     assert euclidean(a, b) == 5.0
+
+
+def test_manhattan():
+    a = np.array([0, 0])
+    b = np.array([3, 4])
+    assert manhattan(a, b) == 7.0
+
+
+def test_chebyshev():
+    a = np.array([0, 0])
+    b = np.array([3, 4])
+    assert chebyshev(a, b) == 4.0
+
+
+def test_minkowski():
+    a = np.array([0, 0])
+    b = np.array([3, 4])
+    assert pytest.approx(minkowski(a, b, p=1)) == 7.0
 
 
 def test_cosine():
