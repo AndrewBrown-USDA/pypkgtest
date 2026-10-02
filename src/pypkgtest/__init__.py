@@ -1,6 +1,6 @@
-from .distances import cosine, euclidean, gower
+from .distances import chebyshev, cosine, euclidean, gower, manhattan, minkowski
 
-__all__ = ["cosine", "euclidean", "gower", "main"]
+__all__ = ["chebyshev", "cosine", "euclidean", "gower", "main", "manhattan", "minkowski"]
 
 
 def main() -> None:
